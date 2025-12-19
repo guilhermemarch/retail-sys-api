@@ -1,4 +1,4 @@
-# Supermarket Manager - Inventory and Cart Management System
+# Supermarket Manager - Sistema de Gerenciamento de Estoque e Carrinho
 
 [![Java](https://img.shields.io/badge/Java-17-red?logo=java&logoColor=white)](https://www.oracle.com/java/)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-blue?logo=mysql&logoColor=white)](https://www.mysql.com/)
@@ -6,77 +6,77 @@
 [![Picocli](https://img.shields.io/badge/Picocli-CLI%20Framework-green)](https://picocli.info/)
 [![Maven](https://img.shields.io/badge/Maven-3.9-orange?logo=apachemaven)](https://maven.apache.org/)
 
-Complete supermarket management system with CLI and interactive console interface. Inventory control, shopping cart, and checkout with MySQL persistence, offering two interfaces: traditional interactive menu and modern CLI commands with Picocli.
+Sistema completo de gerenciamento de supermercado com interface CLI e console interativo. Controle de estoque, carrinho de compras e checkout com persistência MySQL, oferecendo duas interfaces: menu interativo tradicional e comandos CLI modernos com Picocli.
 
 ---
 
 ## Quick Start
 
 ```bash
-# 1. Clone the repository
+# 1. Clonar o repositório
 git clone https://github.com/your-username/retail-sys-api.git
 cd retail-sys-api
 
-# 2. Configure MySQL
+# 2. Configurar MySQL
 mysql -u root -p < src/main/resources/script.txt
 
-# 3. Configure db.properties
-# Edit src/main/resources/db.properties with your credentials
+# 3. Configurar db.properties
+# Editar src/main/resources/db.properties com suas credenciais
 
-# 4. Compile the project
+# 4. Compilar o projeto
 mvn clean package
 
-# 5. Run the application
+# 5. Executar a aplicação
 
-# Option A: Interactive menu
+# Opção A: Menu interativo
 java -cp target/retail-sys-api-1.0.0.jar carrinho.Program
 
-# Option B: CLI interface
+# Opção B: Interface CLI
 java -cp target/retail-sys-api-1.0.0.jar carrinho.cli.SupermarketCLI estoque -l
 ```
 
 ---
 
-## Features
+## Funcionalidades
 
-### Inventory Management
-- Add products to inventory
-- Remove products from inventory
-- Search products by ID
-- List all available products
-- Product categorization
-- Quantity and price control
+### Gerenciamento de Estoque
+- Adicionar produtos ao inventário
+- Remover produtos do inventário
+- Buscar produtos por ID
+- Listar todos os produtos disponíveis
+- Categorização de produtos
+- Controle de quantidade e preços
 
-### Cart Management
-- Add products to cart
-- Remove products from cart
-- View cart contents
-- Clear cart completely
-- Calculate total value
+### Gerenciamento de Carrinho
+- Adicionar produtos ao carrinho
+- Remover produtos do carrinho
+- Visualizar conteúdo do carrinho
+- Limpar carrinho completamente
+- Calcular valor total
 
-### Checkout System
-- Process purchase and update inventory
-- Availability validation
-- Automatic inventory update
-- Cart cleanup after checkout
+### Sistema de Checkout
+- Processar compra e atualizar estoque
+- Validação de disponibilidade
+- Atualização automática do inventário
+- Limpeza do carrinho após checkout
 
-### Multiple Interfaces
-- Traditional interactive menu (console)
-- Modern CLI with Picocli (commands)
-- MySQL persistence
-- Optimized JDBC operations
+### Múltiplas Interfaces
+- Menu interativo tradicional (console)
+- CLI moderna com Picocli (comandos)
+- Persistência em MySQL
+- Operações JDBC otimizadas
 
 ---
 
-## Architecture
+## Arquitetura
 
-### System Architecture
+### Arquitetura do Sistema
 
 ```mermaid
 graph TB
     subgraph "User Interface Layer"
-        MenuUI[Interactive Menu<br/>Program.java]
-        CLI[CLI Commands<br/>SupermarketCLI.java<br/>Picocli]
+        MenuUI[Menu Interativo<br/>Program.java]
+        CLI[Comandos CLI<br/>SupermarketCLI.java<br/>Picocli]
     end
     
     subgraph "Application Layer"
@@ -114,7 +114,7 @@ graph TB
     JDBC --> MySQL
 ```
 
-### Data Model (ER Diagram)
+### Modelo de Dados (Diagrama ER)
 
 ```mermaid
 erDiagram
@@ -147,46 +147,46 @@ erDiagram
         timestamp data_compra
     }
     
-    PRODUTO ||--o{ ESTOQUE : "maintained in"
-    PRODUTO ||--o{ CARRINHO : "added to"
-    PRODUTO ||--o{ COMPRA : "sold in"
+    PRODUTO ||--o{ ESTOQUE : "mantido em"
+    PRODUTO ||--o{ CARRINHO : "adicionado a"
+    PRODUTO ||--o{ COMPRA : "vendido em"
 ```
 ---
 
-## Technologies
+## Tecnologias
 
 ### Core
 
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| Java | 17 | Programming language |
-| Maven | 3.9 | Build and dependency management |
-| MySQL | 8.0 | Relational database |
-| JDBC | - | Database connectivity |
+| Tecnologia | Versão | Propósito |
+|------------|--------|-----------|
+| Java | 17 | Linguagem de programação |
+| Maven | 3.9 | Build e gerenciamento de dependências |
+| MySQL | 8.0 | Banco de dados relacional |
+| JDBC | - | Conectividade com banco de dados |
 
-### Libraries
+### Bibliotecas
 
-| Library | Version | Purpose |
-|---------|---------|---------|
-| Picocli | 4.7.x | CLI commands framework |
-| MySQL Connector/J | 8.0.x | MySQL JDBC driver |
+| Biblioteca | Versão | Propósito |
+|------------|--------|-----------|
+| Picocli | 4.7.x | Framework para comandos CLI |
+| MySQL Connector/J | 8.0.x | Driver JDBC para MySQL |
 
-### Tools
+### Ferramentas
 
-| Tool | Purpose |
-|------|---------|
-| IntelliJ IDEA | Recommended IDE |
-| MySQL Workbench | Visual database management |
-| Maven | Build automation |
+| Ferramenta | Propósito |
+|------------|-----------|
+| IntelliJ IDEA | IDE recomendada |
+| MySQL Workbench | Gerenciamento visual do BD |
+| Maven | Automação de build |
 
 
 ---
 
-## Usage
+## Uso
 
-### Mode 1: Interactive Menu
+### Modo 1: Menu Interativo
 
-Run program with traditional menu interface:
+Executar o programa com interface de menu tradicional:
 
 ```bash
 java -cp target/retail-sys-api-1.0.0.jar carrinho.Program
@@ -195,138 +195,128 @@ java -cp target/retail-sys-api-1.0.0.jar carrinho.Program
 **Interface:**
 ```
 === SUPERMARKET MANAGER ===
-1. Manage Inventory
-2. Manage Cart
-3. Checkout
-0. Exit
-Choose option: _
+1. Gerenciar Estoque
+2. Gerenciar Carrinho
+3. Fazer Checkout
+0. Sair
+Escolha uma opção: _
 ```
 
-#### Inventory Menu
+#### Menu de Estoque
 
 ```
-=== INVENTORY ===
-1. Add product
-2. Remove product
-3. List products
-4. Search product by ID
-0. Back
-Choose option: 1
+=== ESTOQUE ===
+1. Adicionar produto
+2. Remover produto
+3. Listar produtos
+4. Buscar produto por ID
+0. Voltar
+Escolha uma opção: 1
 
-Enter product name: Coffee 500g
-Enter category: Food
-Enter price: 18.90
-Enter quantity: 50
+Digite o nome do produto: Café 500g
+Digite a categoria: Alimentos
+Digite o preço: 18.90
+Digite a quantidade: 50
 
-Product successfully added! ID: 9
+Produto adicionado com sucesso! ID: 9
 ```
 
-#### Cart Menu
+#### Menu de Carrinho
 
 ```
-=== CART ===
-1. Add product to cart
-2. Remove product from cart
-3. View cart
-4. Clear cart
-0. Back
-Choose option: 1
+=== CARRINHO ===
+1. Adicionar produto ao carrinho
+2. Remover produto do carrinho
+3. Ver carrinho
+4. Limpar carrinho
+0. Voltar
+Escolha uma opção: 1
 
-Enter product ID: 1
-Enter quantity: 2
+Digite o ID do produto: 1
+Digite a quantidade: 2
 
-2x Rice 5kg added to cart
+2x Arroz 5kg adicionados ao carrinho
 ```
 
 #### Checkout
 
 ```
 === CHECKOUT ===
-Cart items:
-1. Rice 5kg - Qty: 2 - R$ 51.80
-2. Beans 1kg - Qty: 3 - R$ 25.50
+Itens no carrinho:
+1. Arroz 5kg - Qtd: 2 - R$ 51.80
+2. Feijão 1kg - Qtd: 3 - R$ 25.50
 
 Total: R$ 77.30
 
-Confirm purchase? (Y/N): Y
+Confirmar compra? (S/N): S
 
-Purchase completed successfully!
-Inventory updated
-Cart cleared
+Compra realizada com sucesso!
+Estoque atualizado
+Carrinho limpo
 ```
 
 ---
 
-## CLI Interface
+## Interface CLI
 
-### Available Commands
+### Comandos Disponíveis
 
-Execute direct commands using modern CLI interface:
+Executar comandos diretos usando a interface CLI moderna:
 
 ```bash
-java -cp target/retail-sys-api-1.0.0.jar carrinho.cli.SupermarketCLI [COMMAND] [OPTIONS]
+java -cp target/retail-sys-api-1.0.0.jar carrinho.cli.SupermarketCLI [COMANDO] [OPÇÕES]
 ```
 
-### General Help
+### Ajuda Geral
 
 ```bash
 java -cp target/retail-sys-api-1.0.0.jar carrinho.cli.SupermarketCLI --help
 ```
 
-**Output:**
+**Saída:**
 ```
 Usage: supermarket-cli [COMMAND]
-Supermarket Management System - CLI Interface
+Sistema de Gerenciamento de Supermercado - Interface CLI
 
-Commands:
-  estoque   Manage product inventory
-  carrinho  Manage shopping cart
-  help      Display help information
+Comandos:
+  estoque   Gerenciar estoque de produtos
+  carrinho  Gerenciar carrinho de compras
+  help      Exibir informações de ajuda
 ```
 
 ---
 
-### Command: estoque
+### Comando: estoque
 
-#### List products
+#### Listar produtos
 
 ```bash
 java -cp target/retail-sys-api-1.0.0.jar carrinho.cli.SupermarketCLI estoque -l
 ```
 
-**Output:**
+**Saída:**
 ```
-=== INVENTORY ===
-ID  | Name              | Category  | Price   | Quantity
-----|-------------------|-----------|---------|------------
-1   | Rice 5kg          | Food      | R$ 25.90| 100
-2   | Beans 1kg         | Food      | R$ 8.50 | 150
-3   | Soybean Oil 900ml | Food      | R$ 7.20 | 80
+=== ESTOQUE ===
+ID  | Nome              | Categoria  | Preço   | Quantidade
+----|-------------------|------------|---------|------------
+1   | Arroz 5kg         | Alimentos  | R$ 25.90| 100
+2   | Feijão 1kg        | Alimentos  | R$ 8.50 | 150
+3   | Óleo de Soja 900ml| Alimentos  | R$ 7.20 | 80
 ...
 ```
 
-#### Add product
+#### Adicionar produto
 
 ```bash
 java -cp target/retail-sys-api-1.0.0.jar carrinho.cli.SupermarketCLI estoque \
   -a \
-  --name "Coffee 500g" \
-  --category "Food" \
+  --name "Café 500g" \
+  --category "Alimentos" \
   --price 18.90 \
   --quantity 50
 ```
 
-**Output:**
-```
-Product successfully added!
-  ID: 9
-  Name: Coffee 500g
-  Category: Food
-  Price: R$ 18.90
-  Quantity: 50
-```
-
-#### Remove product
+#### Remover produto
 
 ```bash
 java -cp target/retail-sys-api-1.0.0.jar carrinho.cli.SupermarketCLI estoque \
@@ -335,51 +325,24 @@ java -cp target/retail-sys-api-1.0.0.jar carrinho.cli.SupermarketCLI estoque \
   --quantity 10
 ```
 
-**Output:**
-```
-10 units of 'Coffee 500g' removed from inventory
-  Remaining quantity: 40
-```
-
-#### Search product by ID
+#### Buscar produto por ID
 
 ```bash
 java -cp target/retail-sys-api-1.0.0.jar carrinho.cli.SupermarketCLI estoque \
   --find 1
 ```
 
-**Output:**
-```
-=== PRODUCT ===
-ID: 1
-Name: Rice 5kg
-Category: Food
-Price: R$ 25.90
-Stock quantity: 100
-```
-
 ---
 
-### Command: carrinho
+### Comando: carrinho
 
-#### List cart items
+#### Listar itens do carrinho
 
 ```bash
 java -cp target/retail-sys-api-1.0.0.jar carrinho.cli.SupermarketCLI carrinho -l
 ```
 
-**Output:**
-```
-=== SHOPPING CART ===
-ID  | Product           | Qty | Unit Price  | Subtotal
-----|-------------------|-----|-------------|----------
-1   | Rice 5kg          | 2   | R$ 25.90    | R$ 51.80
-2   | Beans 1kg         | 3   | R$ 8.50     | R$ 25.50
-
-Total: R$ 77.30
-```
-
-#### Add to cart
+#### Adicionar ao carrinho
 
 ```bash
 java -cp target/retail-sys-api-1.0.0.jar carrinho.cli.SupermarketCLI carrinho \
@@ -388,14 +351,7 @@ java -cp target/retail-sys-api-1.0.0.jar carrinho.cli.SupermarketCLI carrinho \
   --quantity 2
 ```
 
-**Output:**
-```
-2x Rice 5kg added to cart
-  Unit price: R$ 25.90
-  Subtotal: R$ 51.80
-```
-
-#### Remove from cart
+#### Remover do carrinho
 
 ```bash
 java -cp target/retail-sys-api-1.0.0.jar carrinho.cli.SupermarketCLI carrinho \
@@ -403,43 +359,33 @@ java -cp target/retail-sys-api-1.0.0.jar carrinho.cli.SupermarketCLI carrinho \
   --product-id 1
 ```
 
-**Output:**
-```
-Rice 5kg removed from cart
-```
-
-#### Clear cart
+#### Limpar carrinho
 
 ```bash
 java -cp target/retail-sys-api-1.0.0.jar carrinho.cli.SupermarketCLI carrinho --clear
 ```
 
-**Output:**
-```
-Cart successfully cleared
-```
+---
+
+### Tabela Completa de Comandos CLI
+
+| Comando | Opções | Descrição | Exemplo |
+|---------|--------|-----------|---------|
+| `estoque -l` | `--list` | Listar todos os produtos | `estoque -l` |
+| `estoque -a` | `--add`, `--name`, `--category`, `--price`, `--quantity` | Adicionar produto | `estoque -a --name "Café" --price 18.90 --quantity 50` |
+| `estoque -r` | `--remove`, `--id`, `--quantity` | Remover quantidade | `estoque -r --id 1 --quantity 10` |
+| `estoque --find` | `--find <id>` | Buscar por ID | `estoque --find 1` |
+| `carrinho -l` | `--list` | Listar carrinho | `carrinho -l` |
+| `carrinho -a` | `--add`, `--product-id`, `--quantity` | Adicionar ao carrinho | `carrinho -a --product-id 1 --quantity 2` |
+| `carrinho -r` | `--remove`, `--product-id` | Remover do carrinho | `carrinho -r --product-id 1` |
+| `carrinho --clear` | `--clear` | Limpar carrinho | `carrinho --clear` |
+| `help` | - | Ajuda | `help` |
 
 ---
 
-### Complete CLI Commands Table
+## Estrutura de Classes
 
-| Command | Options | Description | Example |
-|---------|---------|-------------|---------|
-| `estoque -l` | `--list` | List all products | `estoque -l` |
-| `estoque -a` | `--add`, `--name`, `--category`, `--price`, `--quantity` | Add product | `estoque -a --name "Coffee" --price 18.90 --quantity 50` |
-| `estoque -r` | `--remove`, `--id`, `--quantity` | Remove quantity | `estoque -r --id 1 --quantity 10` |
-| `estoque --find` | `--find <id>` | Search by ID | `estoque --find 1` |
-| `carrinho -l` | `--list` | List cart | `carrinho -l` |
-| `carrinho -a` | `--add`, `--product-id`, `--quantity` | Add to cart | `carrinho -a --product-id 1 --quantity 2` |
-| `carrinho -r` | `--remove`, `--product-id` | Remove from cart | `carrinho -r --product-id 1` |
-| `carrinho --clear` | `--clear` | Clear cart | `carrinho --clear` |
-| `help` | - | Help | `help` |
-
----
-
-## Class Structure
-
-### Project Organization
+### Organização do Projeto
 
 ```
 retail-sys-api/
@@ -447,21 +393,21 @@ retail-sys-api/
 │   └── main/
 │       ├── java/
 │       │   └── carrinho/
-│       │       ├── Program.java              # Main - Interactive menu
-│       │       ├── Menu.java                 # Menu manager
+│       │       ├── Program.java              # Main - Menu interativo
+│       │       ├── Menu.java                 # Gerenciador de menus
 │       │       ├── servico/
-│       │       │   ├── Estoque.java         # Inventory logic
-│       │       │   └── Carrinho.java        # Cart logic
+│       │       │   ├── Estoque.java         # Lógica de estoque
+│       │       │   └── Carrinho.java        # Lógica de carrinho
 │       │       ├── entidades/
-│       │       │   └── Produto.java         # Product entity
+│       │       │   └── Produto.java         # Entidade Produto
 │       │       ├── db/
-│       │       │   ├── DB.java              # Database connection
-│       │       │   └── DbException.java     # Custom exceptions
+│       │       │   ├── DB.java              # Conexão com BD
+│       │       │   └── DbException.java     # Exceções customizadas
 │       │       └── cli/
-│       │           └── SupermarketCLI.java  # CLI interface (Picocli)
+│       │           └── SupermarketCLI.java  # Interface CLI (Picocli)
 │       └── resources/
-│           ├── db.properties                 # Database config
-│           ├── script.txt                    # Initial SQL script
-│           └── mysql-connector/              # JDBC driver
+│           ├── db.properties                 # Configurações do BD
+│           ├── script.txt                    # Script SQL inicial
+│           └── mysql-connector/              # Driver JDBC
 └── pom.xml                                   # Maven config
 ```
